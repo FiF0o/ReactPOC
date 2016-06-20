@@ -35026,7 +35026,6 @@ var Comment = function (_React$Component) {
           { className: 'comment-body' },
           commentBody
         ),
-        '//TODO Fix toggle abuse to have Yes No text displayed and pop up onDelete',
         _react2.default.createElement(
           'div',
           { className: 'comment-actions' },
@@ -35039,6 +35038,8 @@ var Comment = function (_React$Component) {
         )
       );
     }
+    //TODO Fix toggle abuse to have Yes No text displayed and pop up onDelete
+
   }, {
     key: '_toggleAbuse',
     value: function _toggleAbuse(event) {
@@ -35224,15 +35225,15 @@ var CommentBox = function (_React$Component) {
          rendered on
           he page
          */
+        //TODO fix setInterval which removes comment every 1 min
 
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var _this2 = this;
-
+            var fetch = this._fetchComments();
             this._timer = setInterval(function () {
-                return _this2._fetchComments();
-            }, 5000);
+                return fetch;
+            }, 1000);
         }
 
         //destroys timer when about to be remove removed - no more memory leak
@@ -35318,14 +35319,14 @@ var CommentBox = function (_React$Component) {
     }, {
         key: '_getComments',
         value: function _getComments() {
-            var _this3 = this;
+            var _this2 = this;
 
             return this.state.comments.map(function (comment) {
                 /* spread operator to return comment.id, comment.author,
                  comment.body, comment.avatarUrl etc..
                  all comment properties */
                 return _react2.default.createElement(_Comment2.default, _extends({}, comment, {
-                    onDelete: _this3._deleteComment,
+                    onDelete: _this2._deleteComment,
                     key: comment.id
                 }));
                 // onDelete - declare this._deleteComment in constructor
@@ -35411,7 +35412,7 @@ var CommentBox = function (_React$Component) {
     }, {
         key: '_fetchComments',
         value: function _fetchComments() {
-            var _this4 = this;
+            var _this3 = this;
 
             _jquery2.default.ajax({
                 method: 'GET',
@@ -35422,7 +35423,7 @@ var CommentBox = function (_React$Component) {
                 // BlogPage, etc..
                 url: this.props.apiUrl,
                 success: function success(comments) {
-                    _this4.setState({ comments: comments });
+                    _this3.setState({ comments: comments });
                 }
             });
         }

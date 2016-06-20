@@ -34,7 +34,6 @@ export default class Comment extends React.Component {
 
         <p className="comment-header">{this.props.author}</p>
         <p className="comment-body">{commentBody}</p>
-        //TODO Fix toggle abuse to have Yes No text displayed and pop up onDelete
         <div className="comment-actions">
           <CommentConfirmation onDelete={this._handleDelete} />
           <a href="#" onClick={this._toggleAbuse}>Report as Abuse</a>
@@ -42,6 +41,7 @@ export default class Comment extends React.Component {
       </div>
     );
   }
+  //TODO Fix toggle abuse to have Yes No text displayed and pop up onDelete
 
   _toggleAbuse(event) {
     event.preventDefault();

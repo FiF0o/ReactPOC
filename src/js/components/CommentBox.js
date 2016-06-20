@@ -45,9 +45,10 @@ export default class CommentBox extends React.Component {
      rendered on
       he page
      */
-    
+    //TODO fix setInterval which removes comment every 1 min
     componentDidMount() {
-        this._timer = setInterval(() => this._fetchComments(), 5000)
+        let fetch = this._fetchComments();
+        this._timer = setInterval(() => fetch, 1000)
     }
 
     //destroys timer when about to be remove removed - no more memory leak
@@ -84,6 +85,7 @@ export default class CommentBox extends React.Component {
         this.setState({showComments: !this.state.showComments})
         e.preventDefault();
     }
+
     _getAvatars() {
         return this.state.comments.map(comment => comment.avatarUrl);
     }

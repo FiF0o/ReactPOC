@@ -26,7 +26,7 @@ Run `gulp serve` to bundle the assets.
 
 ## Deploy
 
-Static app is deployed [loose-bite.surge.sh](loose-bite.surge.sh)
+Static app is deployed [Robot-App](loose-bite.surge.sh/)
 
 ## Improvements
  - Add npm scripts for building and deploying the app

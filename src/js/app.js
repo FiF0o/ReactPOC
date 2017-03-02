@@ -13,7 +13,7 @@ import VideoPage from './pages/VideoPage'
 //on this Route, / component Layout is being rendered
 
 /*
-this.props.children (<Route>)are being passed here (nested) when declaring
+this.props.children (<Routex§>)are being passed here (nested) when declaring
 this.props.children on the parent class 
 */
 const app = (

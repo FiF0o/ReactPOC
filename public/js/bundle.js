@@ -34930,7 +34930,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //on this Route, / component Layout is being rendered
 
 /*
-this.props.children (<Route>)are being passed here (nested) when declaring
+this.props.children (<Routex§>)are being passed here (nested) when declaring
 this.props.children on the parent class 
 */
 var app = _react2.default.createElement(

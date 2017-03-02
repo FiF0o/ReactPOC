@@ -57,7 +57,10 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-register": "6.23.0",
+    "surge": "0.18.0"
+  },
   "directories": {
     "test": "test"
   }
